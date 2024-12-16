@@ -1,0 +1,3 @@
+requests==2.25.1
+flask==1.1.2
+# comment line should be ignored
