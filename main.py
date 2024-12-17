@@ -2,6 +2,7 @@ import argparse
 import sys
 
 from vuln_scout.parser import parse_requirements
+from vuln_scout.fetcher import fetch_vulnerabilities
 
 def main():
     parser = argparse.ArgumentParser(description="VulnScout: Dependency Vulnerability Scanner")
@@ -14,9 +15,27 @@ def main():
     # Parse dependencies
     deps = parse_requirements(args.input)
     print("Parsed dependencies:", deps)
-    print(f"Input file: {args.input}")
-    print(f"Output file: {args.output}")
-    print(f"Report format: {args.format}")
+
+    # Fetch vulnerabilities for each dependency
+    all_results = {}
+    for dep in deps:
+        name = dep["name"]
+        version = dep["version"]
+        vulns = fetch_vulnerabilities(name, version)
+        all_results[name] = {
+            "version": version,
+            "vulnerabilities": vulns
+        }
+
+    # For now, just print the results to verify
+    print("Vulnerability Results:")
+    for pkg, info in all_results.items():
+        print(f"Package: {pkg}=={info['version']}")
+        if info["vulnerabilities"]:
+            for v in info["vulnerabilities"]:
+                print(f"  - {v['id']}: {v['summary']} (Severity: {v['severity']})")
+        else:
+            print("  No vulnerabilities found.")
 
 if __name__=="__main__":
     main()

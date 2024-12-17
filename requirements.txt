@@ -1,3 +1,5 @@
-requests==2.25.1
+# Known vulnerable versions of 'requests' might be older ones (this is just an example)
+requests==2.19.1
 flask==1.1.2
+
 # comment line should be ignored
