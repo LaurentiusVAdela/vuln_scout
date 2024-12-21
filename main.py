@@ -3,6 +3,7 @@ import sys
 
 from vuln_scout.parser import parse_requirements
 from vuln_scout.fetcher import fetch_vulnerabilities
+from vuln_scout.utils import version_in_vulnerable_range
 
 def main():
     parser = argparse.ArgumentParser(description="VulnScout: Dependency Vulnerability Scanner")
@@ -27,7 +28,7 @@ def main():
             "vulnerabilities": vulns
         }
 
-    # For now, just print the results to verify
+    # Print the unfiltered results
     print("Vulnerability Results:")
     for pkg, info in all_results.items():
         print(f"Package: {pkg}=={info['version']}")
@@ -37,5 +38,17 @@ def main():
         else:
             print("  No vulnerabilities found.")
 
-if __name__=="__main__":
+    # Attempting to filter vulnerabilities
+    filtered_vulns = []
+    for vuln in vulns:
+        # vuln["affected_ranges"] comes from our 'fetcher.py' data structure
+        if any(version_in_vulnerable_range(version, [r]) for r in vuln["affected_ranges"]):
+            filtered_vulns.append(vuln)
+
+    all_results[name] = {
+        "version": version,
+        "vulnerabilities": filtered_vulns
+    }
+
+if __name__ == "__main__":
     main()

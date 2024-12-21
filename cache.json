@@ -1,0 +1,439 @@
+{
+  "requests==2.19.1": [
+    {
+      "id": "GHSA-9wx4-h78v-vm56",
+      "summary": "Requests `Session` object does not verify requests after making first request with verify=False",
+      "severity": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+      "affected_ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.32.0"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/security/advisories/GHSA-9wx4-h78v-vm56"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/pull/6655"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/commit/a58d7f2ffb4d00b46dca2d70a3932a0b37e22fac"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/psf/requests"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IYLSNK5TL46Q6XPRVMHVWS63MVJQOK4Q"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N7WP6EYDSUOCOJYHDK5NX43PYZ4SNHGZ"
+        }
+      ]
+    },
+    {
+      "id": "GHSA-j8r2-6x86-q33q",
+      "summary": "Unintended leak of Proxy-Authorization header in requests",
+      "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected_ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.31.0"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/psf/requests"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/releases/tag/v2.31.0"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pypa/advisory-database/tree/main/vulns/requests/PYSEC-2023-74.yaml"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.debian.org/debian-lts-announce/2023/06/msg00018.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AW7HNFGYP44RT3DUDQXG2QT3OEV2PJ7Y"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KOYASTZDGQG2BWLSNBPL3TQRL2G7QYNZ"
+        },
+        {
+          "type": "WEB",
+          "url": "https://security.gentoo.org/glsa/202309-08"
+        }
+      ]
+    },
+    {
+      "id": "GHSA-x84v-xcm2-53pg",
+      "summary": "Insufficiently Protected Credentials in Requests",
+      "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected_ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.20.0"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/requests/requests/issues/4716"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/requests/requests/pull/4718"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/requests/requests/commit/c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+        },
+        {
+          "type": "WEB",
+          "url": "https://access.redhat.com/errata/RHSA-2019:2035"
+        },
+        {
+          "type": "WEB",
+          "url": "https://bugs.debian.org/910766"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pypa/advisory-database/tree/main/vulns/requests/PYSEC-2018-28.yaml"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/requests/requests"
+        },
+        {
+          "type": "WEB",
+          "url": "https://usn.ubuntu.com/3790-1"
+        },
+        {
+          "type": "WEB",
+          "url": "https://usn.ubuntu.com/3790-2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+        },
+        {
+          "type": "WEB",
+          "url": "http://docs.python-requests.org/en/master/community/updates/#release-and-version-history"
+        },
+        {
+          "type": "WEB",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00024.html"
+        }
+      ]
+    },
+    {
+      "id": "PYSEC-2018-28",
+      "summary": "No summary available",
+      "severity": "N/A",
+      "affected_ranges": [
+        {
+          "type": "GIT",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+            }
+          ]
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.20.0"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/requests/requests/pull/4718"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://github.com/requests/requests/issues/4716"
+        },
+        {
+          "type": "FIX",
+          "url": "https://github.com/requests/requests/commit/c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+        },
+        {
+          "type": "WEB",
+          "url": "https://bugs.debian.org/910766"
+        },
+        {
+          "type": "WEB",
+          "url": "https://usn.ubuntu.com/3790-1/"
+        },
+        {
+          "type": "WEB",
+          "url": "http://docs.python-requests.org/en/master/community/updates/#release-and-version-history"
+        },
+        {
+          "type": "WEB",
+          "url": "https://usn.ubuntu.com/3790-2/"
+        },
+        {
+          "type": "WEB",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00024.html"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://access.redhat.com/errata/RHSA-2019:2035"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://github.com/advisories/GHSA-x84v-xcm2-53pg"
+        }
+      ]
+    },
+    {
+      "id": "PYSEC-2023-74",
+      "summary": "No summary available",
+      "severity": "N/A",
+      "affected_ranges": [
+        {
+          "type": "GIT",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+            }
+          ]
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.31.0"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "ADVISORY",
+          "url": "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/psf/requests/releases/tag/v2.31.0"
+        },
+        {
+          "type": "FIX",
+          "url": "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AW7HNFGYP44RT3DUDQXG2QT3OEV2PJ7Y/"
+        }
+      ]
+    }
+  ],
+  "flask==1.1.2": [
+    {
+      "id": "GHSA-m2qf-hxjv-5gpq",
+      "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+      "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected_ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.3.2"
+            }
+          ]
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.5"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/commit/afd63b16170b7c047f5758eb910c416511e9c965"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/pallets/flask"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/releases/tag/2.2.5"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/releases/tag/2.3.2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pypa/advisory-database/tree/main/vulns/flask/PYSEC-2023-62.yaml"
+        },
+        {
+          "type": "WEB",
+          "url": "https://lists.debian.org/debian-lts-announce/2023/08/msg00024.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://security.netapp.com/advisory/ntap-20230818-0006"
+        },
+        {
+          "type": "WEB",
+          "url": "https://www.debian.org/security/2023/dsa-5442"
+        }
+      ]
+    },
+    {
+      "id": "PYSEC-2023-62",
+      "summary": "No summary available",
+      "severity": "N/A",
+      "affected_ranges": [
+        {
+          "type": "GIT",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "70f906c51ce49c485f1d355703e9cc3386b1cc2b"
+            },
+            {
+              "fixed": "afd63b16170b7c047f5758eb910c416511e9c965"
+            }
+          ]
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.5"
+            },
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.3.2"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "type": "FIX",
+          "url": "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/releases/tag/2.3.2"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/pallets/flask/releases/tag/2.2.5"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq"
+        },
+        {
+          "type": "FIX",
+          "url": "https://github.com/pallets/flask/commit/afd63b16170b7c047f5758eb910c416511e9c965"
+        }
+      ]
+    }
+  ]
+}
