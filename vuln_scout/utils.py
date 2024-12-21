@@ -76,3 +76,20 @@ def version_in_vulnerable_range(current_version_str, affected_ranges):
                 return True
 
     return False
+
+def meets_minimum_severity(vuln, min_score=5.0):
+    """
+    Checks if the vulnerability's severity meets or exceeds the min_score.
+    The vulnerability is expected to have a 'severity' field which can be
+    a float or a string ('N/A').
+    """
+    sev = vuln.get("severity", "N/A")
+    
+    # If severity is already a float (or numeric), we can compare directly.
+    # If it's a string, try converting.
+    try:
+        sev_value = float(sev)
+        return sev_value >= min_score
+    except (ValueError, TypeError):
+        # If it's not convertible to float, treat as 0 or exclude it
+        return False
