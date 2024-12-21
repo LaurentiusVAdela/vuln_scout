@@ -1,9 +1,11 @@
 import argparse
 import sys
+import json
 
 from vuln_scout.parser import parse_requirements
 from vuln_scout.fetcher import fetch_vulnerabilities
 from vuln_scout.utils import version_in_vulnerable_range
+from vuln_scout.report import generate_markdown_report
 
 def main():
     parser = argparse.ArgumentParser(description="VulnScout: Dependency Vulnerability Scanner")
@@ -17,38 +19,46 @@ def main():
     deps = parse_requirements(args.input)
     print("Parsed dependencies:", deps)
 
-    # Fetch vulnerabilities for each dependency
+    # Fetch and filter vulnerabilities
     all_results = {}
     for dep in deps:
         name = dep["name"]
         version = dep["version"]
-        vulns = fetch_vulnerabilities(name, version)
+        raw_vulns = fetch_vulnerabilities(name, version)
+
+        filtered_vulns = []
+        for vuln in raw_vulns:
+            # Check if the current version is within the affected ranges
+            if any(version_in_vulnerable_range(version, [r]) for r in vuln["affected_ranges"]):
+                filtered_vulns.append(vuln)
+
         all_results[name] = {
             "version": version,
-            "vulnerabilities": vulns
+            "vulnerabilities": filtered_vulns
         }
 
-    # Print the unfiltered results
-    print("Vulnerability Results:")
+    # Optional: Print filtered results in the console for debugging
+    print("\nFiltered Vulnerability Results:")
     for pkg, info in all_results.items():
         print(f"Package: {pkg}=={info['version']}")
-        if info["vulnerabilities"]:
-            for v in info["vulnerabilities"]:
-                print(f"  - {v['id']}: {v['summary']} (Severity: {v['severity']})")
-        else:
+        vulns = info["vulnerabilities"]
+        if not vulns:
             print("  No vulnerabilities found.")
+        else:
+            for v in vulns:
+                print(f"  - {v['id']}: {v['summary']} (Severity: {v['severity']})")
 
-    # Attempting to filter vulnerabilities
-    filtered_vulns = []
-    for vuln in vulns:
-        # vuln["affected_ranges"] comes from our 'fetcher.py' data structure
-        if any(version_in_vulnerable_range(version, [r]) for r in vuln["affected_ranges"]):
-            filtered_vulns.append(vuln)
+    # Generate final report
+    if args.format == "md":
+        report_content = generate_markdown_report(all_results)
+    else:  # json
+        report_content = json.dumps(all_results, indent=2)
 
-    all_results[name] = {
-        "version": version,
-        "vulnerabilities": filtered_vulns
-    }
+    # Write report to file
+    with open(args.output, 'w', encoding='utf-8') as f:
+        f.write(report_content)
+
+    print(f"\nReport generated: {args.output}")
 
 if __name__ == "__main__":
     main()
