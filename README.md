@@ -22,3 +22,9 @@
 3. Start with `python app.py`  
 4. Browse to `http://localhost:5000` and enter a Python package name  
 5. View the vulnerability scan results
+
+## Security Best Practices
+
+- ✅ Input sanitization to prevent injection  
+- ✅ Parameterized queries for database safety  
+- ✅ HTTPS configuration (if added)
