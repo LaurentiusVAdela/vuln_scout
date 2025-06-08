@@ -14,3 +14,11 @@
 - **Database**: SQLite for caching results
 - **Dependency Fetching**: Python API requests to vulnerability databases
 - **Frontend**: HTML + Bootstrap
+
+## Usage
+
+1. Clone the repo  
+2. Run `pip install -r requirements.txt`  
+3. Start with `python app.py`  
+4. Browse to `http://localhost:5000` and enter a Python package name  
+5. View the vulnerability scan results
